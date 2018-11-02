@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 5000
 
 var server = express();
 	server.use(bodyParser.urlencoded({ extended: true }))
+	.use(bodyParser.json())
 	.use(express.static(path.join(__dirname, 'views')))
 	.set('js', path.join(__dirname, 'js'))
   	.set('view engine', 'ejs')
@@ -25,5 +26,5 @@ server.post('/users', function(request, response) {
 	console.log("DevEui des données reçues : " + devEui + "  Port : " + port +
 		"  Infos : " + infos);
 	//Doit contenir les logs recues depuis thingpark
-	console.log("data : " + util.inspect(request.req));
+	console.log("data : " + request.body);
 });
