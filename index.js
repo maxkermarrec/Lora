@@ -17,7 +17,9 @@ server.get('/users', function(request, response) {
 	response.render('pages/users');
 });
 
-/*server.post('/users', function(request, response) {
+server.post('/users', function(request, response) {
+	var devEui = request.param("LrnDevEui");
+	console.log("DevEui des données reçues : " + devEui);
 	var data = JSON.stringify(request.body); //Doit contenir les logs recues depuis thingpark
 	console.log("data : " + data);
-});*/
+});
