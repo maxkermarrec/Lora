@@ -12,10 +12,12 @@ var server = express();
   	.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 server.get('/users', function(request, response) {
+	var devEui = request.param("LrnDevEui");
+	console.log("DevEui des données reçues : " + devEui);
 	response.render('pages/users');
 });
 
-server.post('/users', function(request, response) {
+/*server.post('/users', function(request, response) {
 	var data = JSON.stringify(request.body); //Doit contenir les logs recues depuis thingpark
-	console.log(data);
-});
+	console.log("data : " + data);
+});*/
