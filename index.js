@@ -11,6 +11,10 @@ var server = express();
 	.get('/', (req, res) => res.render('pages/index'))
   	.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
+server.get('/users', function(request, response) {
+	response.render('pages/users');
+});
+
 server.post('/users', function(request, response) {
 	var data = JSON.stringify(request.body); //Doit contenir les logs recues depuis thingpark
 	console.log(data);
