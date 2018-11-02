@@ -27,4 +27,6 @@ server.post('/users', function(request, response) {
 		"  Infos : " + infos);
 	//Doit contenir les logs recues depuis thingpark
 	console.log("data : " + request.body);
+	console.log("data stringified : " + JSON.stringify(request.body));
+	console.log("data parsed : " + JSON.parse(request.body));
 });
