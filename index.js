@@ -25,5 +25,5 @@ server.post('/users', function(request, response) {
 	console.log("DevEui des données reçues : " + devEui + "  Port : " + port +
 		"  Infos : " + infos);
 	//Doit contenir les logs recues depuis thingpark
-	console.log("data : " + util.inspect(request.body));
+	console.log("data : " + util.inspect(request.req));
 });
