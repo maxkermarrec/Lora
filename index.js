@@ -23,10 +23,11 @@ server.post('/users', function(request, response) {
 	var devEui = request.param("LrnDevEui");
 	var port = request.param("LrnFPort");
 	var infos = request.param("LrnInfos");
+	var payload = request.body.DevEUI_uplink.payload_hex;
 	console.log("DevEui des données reçues : " + devEui + "  Port : " + port +
 		"  Infos : " + infos);
 	//Doit contenir les logs recues depuis thingpark
 	console.log("body stringified : " + JSON.stringify(request.body));
-	console.log("payload_hex : " + request.body.payload_hex);
-	console.log("Données du capteur : " + DecodePayloadToString(request.body.payload_hex));
+	console.log("payload_hex : " + payload);
+	console.log("Données du capteur : " + Decoder.DecodePayloadToString(payload));
 });
