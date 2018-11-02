@@ -19,7 +19,10 @@ server.get('/users', function(request, response) {
 
 server.post('/users', function(request, response) {
 	var devEui = request.param("LrnDevEui");
-	console.log("DevEui des données reçues : " + devEui);
-	var data = JSON.stringify(request.body); //Doit contenir les logs recues depuis thingpark
+	var port = request.param("LrnFPort");
+	var infos = request.param("LrnInfos");
+	console.log("DevEui des données reçues : " + devEui + "  Port : " + port +
+		"  Infos : " + infos);
+	var data = JSON.stringify(request); //Doit contenir les logs recues depuis thingpark
 	console.log("data : " + data);
 });
