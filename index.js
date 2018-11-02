@@ -143,5 +143,5 @@ server.post('/users', function(request, response) {
 	//Doit contenir les logs recues depuis thingpark
 	console.log("body stringified : " + JSON.stringify(request.body));
 	console.log("payload_hex : " + payload);
-	console.log("Données du capteur : " + DecodePayloadToString(payload));
+	console.log("Données du capteur : " + DecodePayload(payload));
 });
