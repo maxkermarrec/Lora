@@ -1,5 +1,6 @@
 const express = require('express');
 var bodyParser = require("body-parser");
+var util = require('util');
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
@@ -23,6 +24,6 @@ server.post('/users', function(request, response) {
 	var infos = request.param("LrnInfos");
 	console.log("DevEui des données reçues : " + devEui + "  Port : " + port +
 		"  Infos : " + infos);
-	var data = JSON.stringify(request); //Doit contenir les logs recues depuis thingpark
-	console.log("data : " + data);
+	//Doit contenir les logs recues depuis thingpark
+	console.log("data : " + util.inspect(request));
 });
